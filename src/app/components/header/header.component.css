@@ -1,0 +1,16 @@
+div {
+    height: 100px;
+    background-color: lightblue;
+}
+
+h2 {
+    margin: 0;
+    line-height: 100px;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+a {
+    display: inline-block;
+    padding: 0 6px;
+}

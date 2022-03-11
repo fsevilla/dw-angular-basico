@@ -1,0 +1,12 @@
+<form (submit)="doOnClick()">
+    <input type="text" name="pelicula" [(ngModel)]="searchValue">
+    <button>Click me!</button>
+</form>
+
+<div>
+    <ol>
+        <li *ngFor="let movie of filteredMovies">
+            {{movie.title}}
+        </li>
+    </ol>
+</div>

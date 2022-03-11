@@ -1,0 +1,29 @@
+layout
+    header
+    footer
+    sidebar
+    rightpanel
+
+sections/pages
+    users
+        usersList 
+        newUser
+        userDetails
+    movies
+        moviesList
+        newMovie
+
+    notFound
+    albums
+
+shared/global/common
+    components
+        modal 
+        datalist
+        buttons
+    services
+        user.service
+    directivas
+    guardas
+    pipes
+    interfaces

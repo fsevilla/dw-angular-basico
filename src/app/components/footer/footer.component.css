@@ -1,0 +1,23 @@
+#footer {
+    background-color: #333;
+}
+
+.section {
+    background-color: blue;
+}
+
+div {
+    height: 100px;
+    background-color: black;
+    text-align: center;
+}
+
+div > span {
+    color: white;
+    display: block;
+    line-height: 100px;
+}
+
+span {
+    color: red;
+}

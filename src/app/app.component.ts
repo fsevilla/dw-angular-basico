@@ -1,10 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'mi-primera-app';
+export class AppComponent implements OnInit {
+
+  private nombre:string = 'Juan';
+
+  flag: boolean = true;
+
+
+  getNombre(): string {
+    return this.nombre;
+  }
+
+  ngOnInit(): void {
+
+  }
+
 }
+
