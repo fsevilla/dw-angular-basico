@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Album } from 'src/app/interfaces/album';
+import { DataListColumn } from 'src/app/interfaces/data-list-column';
 import { AlbumsService } from 'src/app/services/albums.service';
 
 @Component({
@@ -13,6 +14,11 @@ export class AlbumsComponent implements OnInit {
 
   albums: Album[] = [];
   userId: Number = 0;
+
+  columns: DataListColumn[] = [
+    { header: 'User', field: 'userId' },
+    { header: 'Title', field: 'title' }
+  ];
 
   constructor(private albumsService: AlbumsService, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.queryParams.subscribe((params: any) => {

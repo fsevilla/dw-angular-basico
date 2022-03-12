@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataListColumn } from 'src/app/interfaces/data-list-column';
 
 import { User } from 'src/app/interfaces/user';
 import { UsersService } from 'src/app/services/users.service';
@@ -10,23 +11,21 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class UsersComponent implements OnInit {
 
-  searchValue: string = '';
   users: Array<User> = [];
-  filteredUsers: Array<User> = [];
+  columns: DataListColumn[] = [
+    { header: 'Name', field: 'name' },
+    { header: 'Username', field: 'username' },
+    { header: 'Email', field: 'email' },
+    { header: 'Actions', preformat: (item: User) => {
+      return `<a href="users/${item.id}/albums">Ver detalles</a>`;
+    }}
+  ]
 
   constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
     this.usersService.getItems().subscribe(response => {
       this.users = response;
-      this.filteredUsers = response;
-    });
-  }
-
-  filterList() {
-    const searchValue = this.searchValue.toLowerCase();
-    this.filteredUsers = this.users.filter(user => {
-      return user.name.toLowerCase().includes(searchValue);
     });
   }
 
